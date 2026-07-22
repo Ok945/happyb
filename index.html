@@ -118,7 +118,7 @@
     @keyframes goldShimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
     .gold-foil{
       background:linear-gradient(100deg,#8a6017 0%,#d4af6a 25%,#fff3d6 45%,#d4af6a 65%,#8a6017 100%);
-      background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+      background-size:250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
       animation:goldShimmer 6s ease-in-out infinite;
     }
     @keyframes twinkle{0%,100%{opacity:.25;transform:scale(.7) rotate(0deg)}50%{opacity:1;transform:scale(1.2) rotate(15deg)}}
@@ -363,7 +363,7 @@ class Component extends DCLogic {
     index: 0,
     turning: false,
     turningIndex: null,
-    viewportScale: 0.78,
+    viewportScale: typeof window !== 'undefined' ? this.computeScale() : 0.78,
     resizing: false,
   };
   get total() { return 8; }
