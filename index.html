@@ -77,12 +77,12 @@
       background:linear-gradient(90deg,#6d482d,#b68c60,#6d482d);
       border-radius:8px;pointer-events:none;
     }
-    .page{position:absolute;inset:0;transform-style:preserve-3d;transform-origin:left center;box-shadow:0 8px 25px rgba(0,0,0,.12)}
+    .page{position:absolute;inset:0;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;transform-origin:left center;box-shadow:0 8px 25px rgba(0,0,0,.12)}
     .page.turn{box-shadow:-40px 20px 60px rgba(0,0,0,.35)}
     .page::before{content:'';position:absolute;left:-2px;top:6px;width:2px;height:calc(100% - 12px);background:#d8c6aa;pointer-events:none}
     .page::after{content:'';position:absolute;left:0;top:0;bottom:0;width:26px;border-radius:5px 0 0 5px;background:linear-gradient(to right,rgba(0,0,0,.15),transparent);pointer-events:none}
-    .front{position:absolute;inset:0;backface-visibility:hidden;border-radius:5px;box-sizing:border-box}
-    .back{position:absolute;inset:0;transform:rotateY(180deg);backface-visibility:hidden;border-radius:5px;background:#f3ead9;display:flex;align-items:center;justify-content:center;font-size:40px;color:#c9b78e}
+    .front{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;border-radius:5px;box-sizing:border-box}
+    .back{position:absolute;inset:0;transform:rotateY(180deg);-webkit-backface-visibility:hidden;backface-visibility:hidden;border-radius:5px;background:#f3ead9;display:flex;align-items:center;justify-content:center;font-size:40px;color:#c9b78e}
     .cover .front::after{
       content:'';position:absolute;inset:0;border-radius:5px;
       background:linear-gradient(120deg,transparent 40%,rgba(255,255,255,.3) 50%,transparent 60%);
@@ -150,7 +150,7 @@
 
     <div class="book-frame" style="{{ bookFrameStyle }}">
     <div style="position:absolute;top:0;left:0;width:760px;height:940px;transform-origin:top left;{{ bookScaleStyle }}">
-    <div class="book-stage" style="position:relative;perspective:2600px;transition:filter 320ms ease,transform 150ms ease-out;{{ bookShadowStyle }}">
+    <div class="book-stage" style="position:relative;-webkit-perspective:2600px;perspective:2600px;transition:filter 320ms ease,transform 150ms ease-out;{{ bookShadowStyle }}">
       <div class="book-wrapper {{ bookWrapperCls }}" style="width:760px;height:940px">
       <div class="book {{ bookTurnCls }}" style="width:100%;height:100%;position:relative;background:#f7f1e6;border-radius:5px;{{ bookTiltStyle }}">
       <div class="stack-edge stack-edge-right" style="{{ stackRightStyle }}"></div>
